@@ -2,39 +2,9 @@
 
 An end-to-end analysis of telecom customer churn: raw data cleaning in Power Query, KPI measures in DAX, and an interactive Power BI dashboard that shows who is leaving and why.
 
-![Dashboard preview](images/churn_dashboard.png)
-
 ## Business Problem
 
 A telecom company is losing customers and wants to know **which customers churn, when, and what they have in common**, so retention offers can be targeted instead of being sent to everyone.
-
-## Dataset
-
-- **File:** `data/telco_churn_unclean.csv`
-- **Size:** 7,048 raw rows and 21 columns (7,043 unique customers after cleaning)
-- **Contents:** customer demographics, services subscribed (internet, security, backup, streaming), contract type, payment method, tenure, monthly and total charges, and a churn flag
-
-## Data Cleaning (Power Query)
-
-The raw file had several quality problems:
-
-| Issue | Fix |
-|---|---|
-| 5 duplicate records | Removed duplicates |
-| Inconsistent contract labels (`month to month` vs `Month-to-month`) | Standardized to one label |
-| Trailing spaces in `PaymentMethod` values | Trimmed text |
-| `$` symbols in `MonthlyCharges` | Removed symbol, converted to decimal number |
-| Blank values in `TotalCharges` | Converted to numeric and handled missing values |
-
-<!-- TODO: edit this table so it lists only the steps you actually performed -->
-
-## Key Metrics
-
-| KPI | Value |
-|---|---|
-| Total customers | 7,043 |
-| Churned customers | 1,869 |
-| Churn rate | 26.54% |
 
 ## Key Findings
 
@@ -64,25 +34,3 @@ The raw file had several quality problems:
 
 Power BI Desktop, Power Query, DAX
 
-## Repository Structure
-
-```
-├── data/
-│   └── telco_churn_unclean.csv
-├── dashboard/
-│   └── Customer_Churn_Dashboard.pbix
-├── images/
-│   └── churn_dashboard.png
-└── README.md
-```
-
-## How to Open
-
-1. Download the `.pbix` file from the `dashboard` folder.
-2. Open it in [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free).
-3. If the data source path breaks, go to **Transform data > Data source settings** and point it to `data/telco_churn_unclean.csv`.
-
-## Author
-
-**Rishabh Jain** | B.Tech CSE (Data Science), Chandigarh Group of Colleges, Landran
-[LinkedIn](https://www.linkedin.com/in/YOUR-LINKEDIN) | rishabh151jain@gmail.com
